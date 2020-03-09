@@ -1,5 +1,6 @@
 # project files
 .DS_Store
+.venv/
 *.txt
 *.json
 *.h5
