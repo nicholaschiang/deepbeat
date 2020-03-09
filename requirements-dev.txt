@@ -1,3 +1,5 @@
 keras
 theano
 music21
+matplotlib
+tensorflow
