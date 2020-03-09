@@ -8,7 +8,7 @@ Note: deepjazz is no longer being actively developed. It may be refactored at so
 
 I built [*deepjazz*](https://deepjazz.io) in 36 hours at a hackathon. It uses Keras & Theano, two deep learning libraries, to generate jazz music. Specifically, it builds a two-layer [LSTM](http://deeplearning.net/tutorial/lstm.html), learning from the given MIDI file. It uses deep learning, the AI tech that powers [Google's AlphaGo](https://deepmind.com/alpha-go.html) and [IBM's Watson](https://www.ibm.com/smarterplanet/us/en/ibmwatson/what-is-watson.html), **to make music -- something that's considered as deeply human**.
 
-[![SoundCloud](https://jisungk.github.io/deepjazz/img/button_soundcloud.png)](https://soundcloud.com/deepjazz-ai)  
+[![SoundCloud](https://jisungk.github.io/deepjazz/img/button_soundcloud.png)](https://soundcloud.com/deepjazz-ai)
 Check out deepjazz's music on **[SoundCloud](https://soundcloud.com/deepjazz-ai)**!
 
 ### Dependencies
@@ -19,14 +19,24 @@ Check out deepjazz's music on **[SoundCloud](https://soundcloud.com/deepjazz-ai)
 
 ### Instructions
 
-Run on CPU with command:  
+First, create a virtual environment and install our dependencies by running:
+
 ```
-python generator.py [# of epochs]
+$ virtualenv -p python3 .venv
+$ source .venv/bin/activate
+$ pip install -r requirements-dev.txt
 ```
 
-Run on GPU with command:  
+Then, run on CPU with command:
+
 ```
-THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python generator.py [# of epochs]
+$ python generator.py [# of epochs]
+```
+
+Or, run on GPU with command:
+
+```
+$ THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python generator.py [# of epochs]
 ```
 
 Note: running Keras/Theano on GPU is formally supported for only NVIDIA cards (CUDA backend).
@@ -35,9 +45,9 @@ Note: `preprocess.py` must be modified to work with other MIDI files (the releva
 
 ### Author
 
-[Ji-Sung Kim](https://jisungkim.com)  
-Princeton University, Department of Computer Science  
-hello (at) jisungkim.com  
+[Ji-Sung Kim](https://jisungkim.com)
+Princeton University, Department of Computer Science
+hello (at) jisungkim.com
 
 ### Citations
 
@@ -45,5 +55,5 @@ This project develops a lot of preprocessing code (with permission) from Evan Ch
 
 ### Code License, Media Copyright
 
-Code is licensed under the Apache License 2.0  
+Code is licensed under the Apache License 2.0
 Images and other media are copyrighted (Ji-Sung Kim)
